@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+    <script src="data.js" defer></script>
+    <script src="js/bootstrap.js" defer></script>
+    <script src="https://kit.fontawesome.com/26679ddbf5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Document</title>
+    <style>
+       .inputContainer{
+        margin: 1rem;
+       }
+       .msg{
+        color: red;
+       }
+       .user{
+        color: aqua;
+       }
+       i{
+        margin-left: -28px;
+       }
+       form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+       }
+    </style>
+</head>
+<body>
+    <section class="container">
+        <form id="my-form">
+          <h1>Add User</h1>
+          <div class="msg" id="error"></div>
+
+            <div class="inputsWrapper">
+
+                <div class="inputContainer">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="John Doe" />
+                </div>
+                <div class="inputContainer">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" placeholder="City & Street"/>
+                </div>
+                <div class="inputContainer">
+                    <label for="pass">password</label>
+                    <input type="password" id="pass" />
+                    <i class="fa-solid fa-eye" id="eyeicon" onclick="togglePassword()"></i>
+                </div>
+
+            </div>
+            <a href="profile.html" id="link"><input class="btn" id="btn" type="submit" value="Submit" /></a>
+        </form>
+  
+        <div id="users" class="users"></div>
+    </section>
+</body>
+</html>

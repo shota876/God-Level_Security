@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="profile.js" defer></script>
+    <script src="data.js" defer></script>
+    <script src="js/bootstrap.js" defer></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Profile</title>
+    <style>
+        .gradient-custom-2 {
+            /* fallback for old browsers */
+            background: #fbc2eb;
+
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: -webkit-linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1));
+ 
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: linear-gradient(to right, rgba(251, 194, 235, 1), rgba(166, 193, 238, 1))
+        }
+        .popup{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          transform: translateY(-50rem);
+          margin: 15px;
+        }
+        .input{
+          margin: 5px;
+          padding: 5px;
+        }
+        .input.about{
+          height: 111px;
+        }
+        .popup.show{
+          visibility: visible;
+          border: solid rgb(136, 130, 130);
+          border-radius: 10px;
+          background-color: #f8f9fa;
+          box-shadow: #888686;
+          width: 500px;
+          margin-left: 30%;
+        }
+        .background{
+          filter: blur(10px);
+        }
+        .button{
+          width: 25px;
+          border-radius: 6px;
+          color: white;
+          background-color: red;
+          box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1);
+          user-select: none;
+          margin-left: 29.2rem;
+        }
+
+        @media(max-width: 768px){
+          #section{
+            margin-bottom: -394px;
+
+          }
+          .popup.show{
+            margin-left: 18%;
+            width: 485px;
+          }
+          .popup{
+            transform: translateY(-25rem);
+          }
+          .button{
+            margin-left: 28.2rem;
+          }
+        }
+        @media(max-width: 575px){
+          .popup.show{
+            margin-left: 8%;
+          }
+        }
+        @media(max-width: 375px){
+          .popup.show {
+            width: 304px;
+          }
+          .popup{
+            transform: translateY(-19rem);
+          }
+          .button{
+            margin-left: 17rem;
+          }
+        }
+        @media(min-width: 768px){
+          #section{
+            margin-bottom: -390px;
+          }
+          .popup{
+            transform: translateY(-35rem);
+          }
+          .popup.show{
+            margin-left: 22%;
+          }
+        }
+        @media(min-width: 968px){
+          .popup{
+            transform: translateY(-35rem);
+          }
+          .popup.show{
+            margin-left: 30%;
+          }
+        }
+    </style>
+<body>
+    <section id="section" class="h-100 gradient-custom-2">
+        <div id="container" class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-lg-9 col-xl-7">
+              <div class="card">
+                <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+                  <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Default_pfp.svg/1200px-Default_pfp.svg.png"
+                      alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                      style="width: 150px; z-index: 1">
+                    <button id="btn" type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"
+                      style="z-index: 1;">
+                      Edit profile
+                    </button>
+                  </div>
+                  <div class="ms-3" style="margin-top: 130px;">
+                    <h5 id="profilename">Andy Horwitz</h5>
+                    <p id="profileaddress">New York</p>
+                  </div>
+                </div>
+                <div class="p-4 text-black" style="background-color: #f8f9fa;">
+                  <div class="d-flex justify-content-end text-center py-1">
+                    <div>
+                      <p class="mb-1 h5">0</p>
+                      <p class="small text-muted mb-0">Photos</p>
+                    </div>
+                    <div class="px-3">
+                      <p class="mb-1 h5">0</p>
+                      <p class="small text-muted mb-0">Followers</p>
+                    </div>
+                    <div>
+                      <p class="mb-1 h5">0</p>
+                      <p class="small text-muted mb-0">Following</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body p-4 text-black">
+                  <div class="mb-5">
+                    <p class="lead fw-normal mb-1">About</p>
+                    <div id="infodiv" class="p-4" style="background-color: #f8f9fa;">
+                      <p class="font-italic mb-1"></p>
+                      <p class="font-italic mb-1"></p>
+                      <p class="font-italic mb-0"></p>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <p class="lead fw-normal mb-0">Recent photos</p>
+                    <p class="mb-0"><a href="#!" class="text-muted">Show all</a></p>
+                  </div>
+                  <div class="row g-2">
+                    <div class="col mb-2">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(112).webp"
+                        alt="image 1" class="w-100 rounded-3">
+                    </div>
+                    <div class="col mb-2">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(107).webp"
+                        alt="image 1" class="w-100 rounded-3">
+                    </div>
+                  </div>
+                  <div class="row g-2">
+                    <div class="col">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(108).webp"
+                        alt="image 1" class="w-100 rounded-3">
+                    </div>
+                    <div class="col">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Lightbox/Original/img%20(114).webp"
+                        alt="image 1" class="w-100 rounded-3">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+</body>
+</html>
