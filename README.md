@@ -7,10 +7,6 @@ tells you the name of the user who used the same
 password before you. If sign up form values are
 valid users can enter to their profiles and even
 change information about themselves
-EBAY
-A sales website very similar to Ebay
-main page.
-Only design for desktop
 
 
 --HTML/SCC Bootstrap-5 & JavaScript--
